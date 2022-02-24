@@ -89,6 +89,7 @@ class Max7219(framebuf.FrameBuffer):
         self.show()
 
     def print_time(self, hour: int, minute: int, second: int):
+        #print(hour, minute, second)
         if hour >= 22 or hour <= 7:
             self.brightness(1)
         else:
@@ -110,7 +111,7 @@ class Max7219(framebuf.FrameBuffer):
         mod = 0b0001
         for y1 in range(8):
             row = big[letter][y1]
-            print(row)
+            # print(row)
             for x1 in range(1, 5):
                 data = row & mod
                 if data != 0:
